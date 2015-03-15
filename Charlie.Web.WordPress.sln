@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charlie.Web.WordPress", "Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charlie.Web.WordPress.Tests", "Charlie.Web.WordPress.Tests\Charlie.Web.WordPress.Tests.csproj", "{CE8B6DD4-B0F4-41F2-BE84-5E5A0D056130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charlie.Web.WordPress.Models", "Charlie.Web.WordPress.Models\Charlie.Web.WordPress.Models.csproj", "{869AD337-90ED-4343-9914-93CE57839490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charlie.Web.WordPress.DataInterface", "Charlie.Web.WordPress.DataInterface\Charlie.Web.WordPress.DataInterface.csproj", "{6F616357-CEDD-45D4-9569-13380B74002C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{CE8B6DD4-B0F4-41F2-BE84-5E5A0D056130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE8B6DD4-B0F4-41F2-BE84-5E5A0D056130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE8B6DD4-B0F4-41F2-BE84-5E5A0D056130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869AD337-90ED-4343-9914-93CE57839490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869AD337-90ED-4343-9914-93CE57839490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869AD337-90ED-4343-9914-93CE57839490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869AD337-90ED-4343-9914-93CE57839490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F616357-CEDD-45D4-9569-13380B74002C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F616357-CEDD-45D4-9569-13380B74002C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F616357-CEDD-45D4-9569-13380B74002C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F616357-CEDD-45D4-9569-13380B74002C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
