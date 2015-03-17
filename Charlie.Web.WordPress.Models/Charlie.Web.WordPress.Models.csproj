@@ -49,6 +49,8 @@
     <Compile Include="Config\CommonConfig.cs" />
     <Compile Include="Config\WebConfig.cs" />
     <Compile Include="IResponseResult.cs" />
+    <Compile Include="Messages\BadRequestMessage.cs" />
+    <Compile Include="Messages\ResponseMessage.cs" />
     <Compile Include="Passport\LoginViewModel.cs" />
     <Compile Include="Passport\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

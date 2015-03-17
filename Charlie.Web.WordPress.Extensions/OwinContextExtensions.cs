@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -18,11 +20,25 @@ namespace Charlie.Web.WordPress
         /// <returns></returns>
         public static IOwinContext GetOwin(this ApiController controller)
         {
-            return controller.Request != null
-                ? controller.Request.GetOwinContext()
-                : HttpContext.Current.GetOwinContext();
+            return controller.Request.GetOwinContext();
         }
 
+        /// <summary>
+        /// Gets the owin.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <returns></returns>
+        public static IOwinContext GetOwin(this HttpContext context)
+        {
+            return context.Request.GetOwinContext();
+        }
+
+        private const string IdentityKeyPrefix = "AspNet.Identity.Owin:";
+
+        private static string GetKey(Type t)
+        {
+            return IdentityKeyPrefix + t.AssemblyQualifiedName;
+        }
         /// <summary>
         /// Gets the specified context.
         /// </summary>
@@ -31,7 +47,7 @@ namespace Charlie.Web.WordPress
         /// <returns></returns>
         public static T Get<T>(this IOwinContext context)
         {
-            return context.Get<T>(typeof (T).ToString());
+            return context.Get<T>(GetKey(typeof(T)));
         }
 
         /// <summary>

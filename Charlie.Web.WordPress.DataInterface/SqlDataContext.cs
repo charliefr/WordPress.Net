@@ -22,7 +22,6 @@ namespace Charlie.Web.WordPress.Data
         public async Task<Post> AddPost(Post model)
         {
             Posts.Add(model);
-            //DbUpdateConcurrencyException
             await SaveChangesAsync();
             return model;
         }

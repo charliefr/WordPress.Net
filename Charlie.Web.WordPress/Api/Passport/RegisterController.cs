@@ -28,7 +28,7 @@ namespace Charlie.Web.WordPress.Api.Passport
        internal System.Threading.Tasks.Task<Data.Models.User> ExecutePost(RegisterViewModel value,  Microsoft.Owin.IOwinContext context)
         {
       
-         
+       //  Microsoft.AspNet.Identity.Owin.OwinContextExtensions.Get
            return System.Threading.Tasks.Task.Run(() => context.Get<IUserRegisterProvider>().Register(value));
         }
     }

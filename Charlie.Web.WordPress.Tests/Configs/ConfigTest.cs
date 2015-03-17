@@ -3,24 +3,21 @@ using System.Diagnostics;
 using System.Text;
 using Charlie.Web.WordPress.Config;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections;
+using System.Collections.Specialized;
+using System.IO;
+using System.Web.Routing;
 
 namespace Charlie.Web.WordPress.Tests.Configs
 {
     [TestClass]
     public class ConfigTest
     {
-        private class tmp11
-        {
-            public tmp11()
-            {
-                Debug.Write(1111);
-            }
-        }
 
         [TestMethod]
         public void CommonConfigTest()
         {
-            var rr = default(tmp11);
+      
             var sp = "VirtualPathHash,Publish,Status,Name,UserId,Title,Summary,Keywords,Content".Split(',');
             const string table = "Post";
             const string tmp = "[Display(ResourceType = typeof(DataResources.DispayResource), Name = \"{0}_{1}_Name\", Description = \"{0}_{1}_Description\", Prompt = \"{0}_{1}_Prompt\")]";

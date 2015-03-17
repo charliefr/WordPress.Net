@@ -77,5 +77,26 @@ namespace Charlie.Web.WordPress
             }
             return errors;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public static IEnumerable<string> GetAllErrors(this Exception e)
+        {
+            var errors = new List<string>();
+            var msg = e.Message;
+            var inner = e.InnerException;
+            while (inner != null)
+            {
+                msg += "->" + inner.Message;
+                inner = inner.InnerException;
+            }
+            errors.Add(msg);
+            return errors;
+
+
+        }
     }
 }

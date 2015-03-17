@@ -33,8 +33,8 @@ namespace Charlie.Web.WordPress.Areas.Admin.Controllers
             var model = new Post();
             if (TryUpdateModel(model, formvalues.GetPrefix()) && ModelState.IsValid)
             {
-                var api = new Api.PostsController();
-               await api.PostPost(model);
+                var api = new Api.PostsController(this);
+             var result=  await api.Post(model);
             }
             return View();
         }
