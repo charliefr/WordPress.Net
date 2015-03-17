@@ -27,9 +27,8 @@ namespace Charlie.Web.WordPress.Api.Passport
         }
        internal System.Threading.Tasks.Task<Data.Models.User> ExecutePost(RegisterViewModel value,  Microsoft.Owin.IOwinContext context)
         {
-           this.ActionContext
-            //IOwinContext context;
-            //if (!this.Request.Properties.TryGetValue<IOwinContext>(OwinContextKey, out context))
+      
+         
            return System.Threading.Tasks.Task.Run(() => context.Get<IUserRegisterProvider>().Register(value));
         }
     }

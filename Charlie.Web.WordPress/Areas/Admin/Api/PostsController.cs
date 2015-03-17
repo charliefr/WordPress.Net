@@ -76,8 +76,7 @@ namespace Charlie.Web.WordPress.Areas.Admin.Api
         [ResponseType(typeof(Data.Models.Post))]
         public async Task<IHttpActionResult> PostPost(Data.Models.Post post)
         {
-        var context=    this.ActionContext;
-            context
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
