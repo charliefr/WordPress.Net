@@ -1,15 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace Charlie.Web.WordPress.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    public sealed partial class User
+    public partial class User
     {
         public User()
         {
+            Posts = new HashSet<Post>();
             UserMetas = new HashSet<UserMeta>();
         }
 
@@ -37,6 +36,8 @@ namespace Charlie.Web.WordPress.Data.Models
 
         public int Status { get; set; }
 
-        public ICollection<UserMeta> UserMetas { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
+
+        public virtual ICollection<UserMeta> UserMetas { get; set; }
     }
 }

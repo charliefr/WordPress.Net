@@ -19,13 +19,13 @@ namespace Charlie.Web.WordPress.Areas.Admin.Api
         private readonly SqlDataContext _db = new SqlDataContext();
 
         // GET: api/Posts
-        public IQueryable<Post> GetPosts()
+        public IQueryable<Data.Models.Post> GetPosts()
         {
             return _db.Posts;
         }
 
         // GET: api/Posts/5
-        [ResponseType(typeof(Post))]
+        [ResponseType(typeof(Data.Models.Post))]
         public async Task<IHttpActionResult> GetPost(int id)
         {
             var post = await _db.Posts.FindAsync(id);
@@ -39,7 +39,7 @@ namespace Charlie.Web.WordPress.Areas.Admin.Api
 
         // PUT: api/Posts/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutPost(int id, Post post)
+        public async Task<IHttpActionResult> PutPost(int id, Data.Models.Post post)
         {
             if (!ModelState.IsValid)
             {
@@ -73,9 +73,11 @@ namespace Charlie.Web.WordPress.Areas.Admin.Api
         }
 
         // POST: api/Posts
-        [ResponseType(typeof(Post))]
-        public async Task<IHttpActionResult> PostPost(Post post)
+        [ResponseType(typeof(Data.Models.Post))]
+        public async Task<IHttpActionResult> PostPost(Data.Models.Post post)
         {
+        var context=    this.ActionContext;
+            context
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -88,9 +90,10 @@ namespace Charlie.Web.WordPress.Areas.Admin.Api
         }
 
         // DELETE: api/Posts/5
-        [ResponseType(typeof(Post))]
+        [ResponseType(typeof(Data.Models.Post))]
         public async Task<IHttpActionResult> DeletePost(int id)
         {
+
             var post = await _db.Posts.FindAsync(id);
             if (post == null)
             {

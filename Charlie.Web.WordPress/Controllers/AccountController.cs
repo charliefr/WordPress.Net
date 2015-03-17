@@ -30,8 +30,10 @@ namespace Charlie.Web.WordPress.Controllers
 
         public ApplicationSignInManager SignInManager
         {
+            
             get
             {
+                
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
             private set 
@@ -70,6 +72,7 @@ namespace Charlie.Web.WordPress.Controllers
         {
             if (!ModelState.IsValid)
             {
+             
                 return View(model);
             }
 

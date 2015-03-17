@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Charlie.Web.WordPress.Models;
 
 namespace Charlie.Web.WordPress.Data
 {
-    public interface IUserDataValidationProvider
+    public interface IUserDataValidationProvider : IDisposable
     {
         [DebuggerStepThrough]
         Task<IResponseResult> IsAvailableUserName(

@@ -1,16 +1,14 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace Charlie.Web.WordPress.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    public sealed partial class Category
+    public partial class Category
     {
         public Category()
         {
             CategoryMetas = new HashSet<CategoryMeta>();
+            PostCategoryConnections = new HashSet<PostCategoryConnection>();
         }
 
         public int Id { get; set; }
@@ -38,6 +36,8 @@ namespace Charlie.Web.WordPress.Data.Models
         [StringLength(255)]
         public string Keywords { get; set; }
 
-        public ICollection<CategoryMeta> CategoryMetas { get; set; }
+        public virtual ICollection<CategoryMeta> CategoryMetas { get; set; }
+
+        public virtual ICollection<PostCategoryConnection> PostCategoryConnections { get; set; }
     }
 }

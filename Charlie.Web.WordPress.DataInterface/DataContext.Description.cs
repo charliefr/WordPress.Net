@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Charlie.Web.WordPress.Data
 {
-    public abstract partial class DataContext: IDataProvider,IDisposable
+    public abstract partial class DataContext: IDisposable
     {
 
 

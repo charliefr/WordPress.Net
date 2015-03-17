@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Charlie.Web.WordPress.Models.Passport;
 
 namespace Charlie.Web.WordPress.Controllers
 {
@@ -54,9 +55,21 @@ namespace Charlie.Web.WordPress.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public ActionResult Register()
         {
+            return View();
+        }
+        [HttpPost,AllowAnonymous,ValidateAntiForgeryToken]
+        public ActionResult Register(FormCollection formValues)
+        {
+            var model = new RegisterViewModel();
+            if ( TryUpdateModel(model, formValues.GetPrefix()) && ModelState.IsValid )
+            {
+                var controller = new Api.Passport.RegisterController();
+                controller.ExecutePost(model, this.HttpContext.GetOwinContext());
+
+            }
             return View();
         }
 
